@@ -105,7 +105,7 @@ class _SMLogger(threading.Thread):
                 log = self._log_queue.get()
                 if not log:
                     return
-                time.sleep(1)
+                    
                 print("%s [%s] %s"%(time.strftime(self._ts_format, time.localtime(log._ts)), LOG_LEVEL_DESCP[log._level], log._content))
             except Exception, fault:
                 print("Error while logging msg.., %s"%str(fault))
